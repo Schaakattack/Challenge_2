@@ -7,11 +7,13 @@ Example:
     $ python app.py
 """
 import sys
+from tkinter.messagebox import YES
 import fire
 import questionary
 from pathlib import Path
 
 from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -108,9 +110,16 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+   
+   
+   
+    response = questionary.confirm("would you like to save your qualifying loans ").ask()
+    if response == "YES":
+       save_csv(qualifying_loans)
+       
 
+    
+        
 
 def run():
     """The main function for running the script."""
@@ -132,3 +141,4 @@ def run():
 
 if __name__ == "__main__":
     fire.Fire(run)
+
