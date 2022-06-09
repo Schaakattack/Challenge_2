@@ -28,3 +28,19 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
+
+def save_csv(qualifying_data):
+    """Saves the qualifying data to a CSV file.
+
+    Args:
+        qualifying_data (list of lists): The qualifying bank data.
+    """
+   
+   # creating the csvwriter
+   
+    with open ("qualifed_data.csv", "w") as csvfile :
+        #line creates the header row and creates csvwriter for rest of file.
+        csvwriter = csv.writer (csvfile)
+        csvwriter. writerow (["Lender" , "Max Loan Amount" , "Max LTV", "Max DTI" , "Min Credit Score" , "Interest Rate"])
+        for qualified_loan in qualifying_data :
+            csvwriter. writerow (qualified_loan)
