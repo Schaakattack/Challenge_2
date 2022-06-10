@@ -1,5 +1,9 @@
 # Challenge_2
-# this program is used to determineif loan qualifications
-# had trouble uploading the files the syb folders underneith were blank. 
-# I added to the fileio and app.py
+#
+# this should allow the use to fitlerthrough loans and save qualified loans
+# the filters are credit_score debt_to_income loan_to_value and max_loan 
+#app.py is the interface 
+#you will need fire to run this
+
+
 
